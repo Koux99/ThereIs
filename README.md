@@ -28,14 +28,14 @@
 ### Association
 - belongs_to :user
 - has_many   :comments
-- has_one    :likes
+- has_many   :likes
 
 
 ## comments テーブル
 
 | Column        | Type       | Options           |
 | ------------- | ---------- | ----------------- |
-| text          | text       | null: false       |
+| comment_text  | text       | null: false       |
 | post_id       | references | foreign_key: true |
 | user_id       | references | foreign_key: true |
 
