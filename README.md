@@ -24,6 +24,8 @@
 | title          | text       | null: false         |
 | lead_text      | text       | null: false         |
 | text           | text       | null: false         |
+| user_id        | references | foreign_key: true   |
+
 
 ### Association
 - belongs_to :user
