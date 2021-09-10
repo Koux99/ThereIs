@@ -1,6 +1,6 @@
 class Post < ApplicationRecord
   
-with options  presence: true do
+with_options  presence: true do
     validates    :title
     validates    :lead_text
     validates    :text
