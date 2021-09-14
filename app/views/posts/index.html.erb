@@ -5,4 +5,12 @@
       <%= render partial: "post", collection: @posts%>
     </div>
   </div>
+
+  <% if user_signed_in? && current_user.admin? %>
+    <%= link_to(new_post_path, class: 'admin_post_btn') do %>
+      <span class='admin_btn_text'>Post</span>
+      <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "admin_btn_icon" %>
+    <% end %>
+  <% end %>
+
 </main>

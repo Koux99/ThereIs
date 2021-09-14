@@ -48,6 +48,7 @@
             <li class="comments_list">
               <%= comment.comment_text %>
               <%= link_to comment.user.nickname, root_path, class: :comment_user %>
+              <%= comment.created_at %>
             </li>
           <% end %>
         </ul>
