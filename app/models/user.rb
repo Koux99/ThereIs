@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   has_many  :posts
   has_many  :comments
-  has_many  :likes
+  has_many  :likes,     dependent: :destroy
 
   def liked_by?(post_id)
     likes.where(post_id: post_id).exists?
