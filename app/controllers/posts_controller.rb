@@ -7,7 +7,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @like = Like.new
   end
 
   def new
