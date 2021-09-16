@@ -21,7 +21,7 @@
           <%if user_signed_in? %>
             <div class="nav__right">
                <%= link_to "Home", root_path, class: :nav__btn %>
-               <%= link_to "Likes", root_path, class: :nav__btn %>
+               <%= link_to "Likes", user_path(current_user.id), class: :nav__btn %>
                <%= link_to "Logout", destroy_user_session_path, class: :nav__btn, method: :delete %>
             </div>
           <% else %>  
