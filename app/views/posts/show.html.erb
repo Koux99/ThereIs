@@ -4,8 +4,6 @@
       <p class="prototype__hedding">
         <%= @post.title %>
       </p>
-      <%= link_to "by #{@post.user.nickname}", root_path, class: :prototype__user %>
-      
       <% if user_signed_in? && current_user.admin? %>
         <div class="prototype__manage">
           <%= link_to "編集する", edit_post_path, class: :prototype__btn %>
@@ -13,15 +11,9 @@
         </div>
       <% end %>
       <div class="prototype__image">
-        <%= image_tag @post.image %>
+        <%= image_tag @post.image, class: "show_image" %>
       </div>
       <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>   <%# 記事の詳細で表示させる必要があるかどうか考える！！ %>
-          <p class="detail__message">
-            <%= @post.lead_text %>
-          </p>
-        </div>
         <div class="prototype__detail">
           <p class="detail__title">記事</p>
           <p class="detail__message">
@@ -29,30 +21,30 @@
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      
+      <% if user_signed_in? %>
+        <div class="prototype__comments">
+            <%= form_with model:[@post, @comment],local: true do |f|%>
+              <div class="field">
+                <%= f.label :comment_text, "コメント" %><br />
+                <%= f.text_field :comment_text, id:"comment_txt" %>
+              </div>
+              <div class="actions">
+                <%= f.submit "送信する", class: :form__btn  %>
+              </div>
+            <% end %> 
 
-        <% if user_signed_in? %>
-          <%= form_with model:[@post, @comment],local: true do |f|%>
-            <div class="field">
-              <%= f.label :comment_text, "コメント" %><br />
-              <%= f.text_field :comment_text, id:"comment_txt" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn  %>
-            </div>
-          <% end %> 
-        <% end %>
-        
-        <ul class="comments_lists" id="comments" >
-          <% @comments.each do |comment| %>
-            <li class="comments_list">
-              <%= comment.comment_text %>
-              <%= link_to comment.user.nickname, root_path, class: :comment_user %>
-              <%= comment.created_at %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+          <ul class="comments_lists" id="comments" >
+            <% @comments.each do |comment| %>
+              <li class="comments_list">
+                <%= comment.comment_text %>
+                <%= link_to comment.user.nickname, root_path, class: :comment_user %>
+                <%= comment.created_at %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     </div>
   </div>
 </main>

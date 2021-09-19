@@ -111,7 +111,7 @@ a {
   margin: 10px 0;
 }
 
-.signup {
+.sign_up {
   background-color: #239b76;
 }
 
@@ -163,6 +163,7 @@ a {
 /* メイン */
 .main{
   background-color: #6495ed;
+  padding-top: 20px;
 }
 
 .page-heading {
@@ -248,10 +249,18 @@ a {
   text-decoration: underline;
 }
 .prototype__image{
-  width: 40%;
+  width: 50%;
+  height: 330px;
   margin: 0 auto;
   padding: 16px 0;
+  
 }
+
+.show_image{
+  width: 100%;
+  margin: 0 auto;
+}
+
 .prototype__detail{
   display: flex;
   align-items: center;
