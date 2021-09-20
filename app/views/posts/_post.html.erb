@@ -8,6 +8,8 @@
       <div id="likes_buttons_<%= post.id %>">
         <%= render partial: 'likes/like', locals: {post: post} %>
       </div>
-      <%= link_to "by #{post.user.nickname}", root_path, class: :card__user %>
+      <div class="card__time">
+        <%= l post.created_at %>
+      </div>
     </div>
 </div>

@@ -27,7 +27,7 @@
         <div class="prototype__comments">
             <%= form_with model:[@post, @comment],local: true do |f|%>
               <div class="field">
-                <%= f.label :comment_text, "コメント" %><br />
+                <%= f.label :comment_text, "Comment" %><br />
                 <%= f.text_field :comment_text, id:"comment_txt" %>
               </div>
               <div class="actions">
@@ -35,15 +35,17 @@
               </div>
             <% end %> 
 
-          <ul class="comments_lists" id="comments" >
+          <div class="comments_lists" id="comments" >
             <% @comments.each do |comment| %>
-              <li class="comments_list">
+              <div class="comments_list">
                 <%= comment.comment_text %>
-                <%= link_to comment.user.nickname, root_path, class: :comment_user %>
-                <%= comment.created_at %>
-              </li>
+                <div class="comment_right">
+                  <%= link_to comment.user.nickname, root_path, class: :comment_user %>
+                  <%= l comment.created_at %>
+                </div>
+              </div>
             <% end %>
-          </ul>
+          </div>
         </div>
       <% end %>
     </div>
