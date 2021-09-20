@@ -187,6 +187,7 @@ a {
   border: 2px solid #6495ed;
   border-radius: 10px;
   background-color: white;
+  position: relative;
 }
 
 .card__img {
@@ -201,12 +202,13 @@ a {
 .card__summary {
   font-size: 16px;
 }
-.card__user {
+.card__time {
   display: block;
-  font-size: 12px;
-  color: #999;
+  font-size: 14px;
   text-align: right;
-  text-decoration: underline;
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
 }
 
 /* 投稿ボタン */
@@ -316,8 +318,28 @@ a {
 }
 
 .comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
+  position: relative;
+  margin: 1.5em 0 1.5em 15px;
+  padding: 7px 10px;
+  min-width: 100px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #e0edff;
+  border-radius: 15px;
+}
+
+.comments_list:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #e0edff;
+}
+.comment_right{
+  text-align: right;
 }
 
 .comment_user{
