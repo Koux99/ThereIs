@@ -2,7 +2,8 @@ class PostsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :admin_check, except: [:index, :show]
+  before_action :admin_check, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search]
   
 
   def index
@@ -43,6 +44,10 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :lead_text, :text, :image).merge(user_id: current_user.id)
@@ -55,6 +60,12 @@ class PostsController < ApplicationController
   def admin_check
     unless current_user.admin?
       redirect_to root_path
+    end
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
     end
   end
 

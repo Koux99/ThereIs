@@ -211,6 +211,21 @@ a {
   right: 10px;
 }
 
+/* 検索フォーム */
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
 /* 投稿ボタン */
 .admin_post_btn {
   width: 120px;
