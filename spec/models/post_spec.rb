@@ -20,7 +20,6 @@ RSpec.describe Post, type: :model do
       it 'lead_textが空では出品できない' do
         @post.lead_text = ''
         @post.valid?
-        binding.pry
         expect(@post.errors.full_messages).to include("Lead text can't be blank")
       end
       it 'textが空では出品できない' do
