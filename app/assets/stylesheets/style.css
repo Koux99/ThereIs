@@ -371,6 +371,15 @@ input{
   text-decoration: underline;
 }
 
+.heart-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.show-heart{
+  margin: 5px 0px 0px 5px ;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);

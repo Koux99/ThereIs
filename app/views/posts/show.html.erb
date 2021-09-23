@@ -1,9 +1,15 @@
 <main class="main">
   <div class="inner">
     <div class="post__wrapper">
-      <p class="post__hedding">
-        <%= @post.title %>
-      </p>
+      <div class="heart-wrapper">
+        <p class="post__hedding">
+          <%= @post.title %>
+        </p>
+        <div class="show-heart" id="likes_buttons_<%= @post.id %>">
+          <%= render partial: 'likes/like', locals: {post: @post} %>
+        </div>
+      </div>
+
       <% if user_signed_in? && current_user.admin? %>
         <div class="post__manage">
           <%= link_to "Edit", edit_post_path, class: :post__btn %>
