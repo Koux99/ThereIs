@@ -64,3 +64,5 @@ gem 'image_processing', '~> 1.2'
 gem 'pry-rails'
 
 gem 'kaminari','~> 1.2.1'
+
+gem "aws-sdk-s3", require: false
