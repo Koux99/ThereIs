@@ -1,5 +1,5 @@
  <div class="card">
-    <%= link_to image_tag(post.image.variant(resize: '292x175'), class: :card__img ), post_path(post.id) if post.image.attached?%>
+    <%= link_to image_tag(post.image.variant(resize: '300x170'), class: :card__img ), post_path(post.id) if post.image.attached?%>
     <div class="card__body">
       <%= link_to post.title, post_path(post.id), class: :card__title%>
       <p class="card__summary">
