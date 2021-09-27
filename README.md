@@ -50,6 +50,31 @@ There is (ゼアイズ)
 アプリ名の「There is」は「There is no waste in our life」から取っています。
 埋もれてしまっている情報が多い時代ですが「無駄なものはない」というところから、この名前をつけました。
 
+# DEMO
+## ・トップページ
+[![Image from Gyazo](https://i.gyazo.com/45eca7b97bd1e849788e14cdf30f398b.gif)](https://gyazo.com/45eca7b97bd1e849788e14cdf30f398b)
+・投稿済みの記事が一覧で表示される
+・全てのユーザーは記事のタイトル・概要・画像・投稿日を確認できる
+・
+
+## ・投稿ページ
+[![Image from Gyazo](https://i.gyazo.com/065570f92abeff692a4fcd1fc7419d13.gif)](https://gyazo.com/065570f92abeff692a4fcd1fc7419d13)
+トップページのPOST
+
+## 投稿詳細ページ
+[![Image from Gyazo](https://i.gyazo.com/aa94f719ac756ea215d3c22191d11000.gif)](https://gyazo.com/aa94f719ac756ea215d3c22191d11000)
+
+
+## コメント欄
+[![Image from Gyazo](https://i.gyazo.com/ed950fa5075477d9fe1bf1d8c395ee5c.gif)](https://gyazo.com/ed950fa5075477d9fe1bf1d8c395ee5c)
+
+## いいね機能
+
+
+
+
+
+
 # 使用技術
 ## バックエンド
 Ruby, Ruby on Rails
