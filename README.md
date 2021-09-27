@@ -54,9 +54,10 @@ There is (ゼアイズ)
 # DEMO
 ## ①トップページ
 [![Image from Gyazo](https://i.gyazo.com/45eca7b97bd1e849788e14cdf30f398b.gif)](https://gyazo.com/45eca7b97bd1e849788e14cdf30f398b)
-・投稿済みの記事が一覧で表示される
-・全てのユーザーは記事のタイトル・概要・画像・投稿日を確認できる
 
+- 全てのユーザーは、投稿された記事の一覧が確認できる
+- 「いいね」はログインユーザーのみ確認できる
+- 右下に固定されているPOSTボタンは管理者ログイン時のみ表示される
 
 ## ②投稿ページ　(新規投稿機能)
 [![Image from Gyazo](https://i.gyazo.com/065570f92abeff692a4fcd1fc7419d13.gif)](https://gyazo.com/065570f92abeff692a4fcd1fc7419d13)
