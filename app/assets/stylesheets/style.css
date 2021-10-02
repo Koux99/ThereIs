@@ -89,7 +89,7 @@ input{
 /* TOPページ */
 
 .upper{
-  background-image: url('sidney.jpg');
+  background-image: url('/images/sidney.jpg');
   background-size: cover;
 }
 
