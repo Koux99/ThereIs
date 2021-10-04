@@ -116,8 +116,14 @@ HTML, CSS, JavaScript
 ## データベース
 MySQL, SequelPro
 
-## インフラ (本番環境)
-Heroku
+## インフラ
+AWS(EC2), Capistrano
+
+## Webサーバ 
+Nginx
+
+## アプリケーションサーバ
+Unicorn
 
 ## ソース管理
 GitHub, GitHubDesktop
