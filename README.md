@@ -114,7 +114,7 @@ Ruby, Ruby on Rails
 HTML, CSS, JavaScript
 
 ## データベース
-MySQL, SequelPro
+MariaDB, SequelPro
 
 ## インフラ
 AWS(EC2), Capistrano
