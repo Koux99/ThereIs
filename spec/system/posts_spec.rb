@@ -121,7 +121,7 @@ RSpec.describe '記事編集', type: :system do
       # 「編集」へのリンクがないことを確認する
       expect(page).to have_no_link 'Edit', href: edit_post_path(@post)
     end
-    it 'ログインしていないとツイートの編集画面には遷移できない' do
+    it 'ログインしていないと投稿の編集画面には遷移できない' do
       # トップページにいる
       visit root_path
       #記事の詳細ページに遷移する
@@ -140,7 +140,7 @@ RSpec.describe '投稿削除', type: :system do
     @user.save
     @post   = FactoryBot.create(:post)
   end
-  context 'ツイート削除ができるとき' do
+  context '投稿削除ができるとき' do
     it 'ログインした「管理者」は自らが投稿した記事の削除ができる' do
       # 記事を投稿したユーザー(管理者)でログインする
       visit new_user_session_path
@@ -166,7 +166,7 @@ RSpec.describe '投稿削除', type: :system do
       expect(page).to have_no_content(@post.lead_text)
     end
   end
-  context 'ツイート削除ができないとき' do
+  context '投稿削除ができないとき' do
     it 'ログインしていても「管理者」以外は記事の削除ができない' do
       # 管理者ではないユーザーでログインする
       visit new_user_session_path
@@ -179,7 +179,7 @@ RSpec.describe '投稿削除', type: :system do
       # 詳細ページに「削除」へのリンクがないことを確認する
       expect(page).to have_no_link 'Delete', href: post_path(@post)
     end
-    it 'ログインしていないとツイートの削除ボタンがない' do
+    it 'ログインしていないと投稿の削除ボタンがない' do
       # トップページに移動する
       visit root_path
       # 記事の詳細ページへ遷移する
