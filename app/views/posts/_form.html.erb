@@ -1,25 +1,25 @@
 <%= form_with model: @post, local: true do |f|%>
   <div class="field">
-    <%= f.label :title, "記事タイトル" %><br />
+    <%= f.label :title, "Title" %><br />
     <%= f.text_field :title, id:"post_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :lead_text, "概要" %><br />
+    <%= f.label :lead_text, "About" %><br />
     <%= f.text_area :lead_text, class: :form__text, id:"post_lead_text" %>
   </div>
 
   <div class="field">
-    <%= f.label :text, "テキスト" %><br />
-    <%= f.text_area :text, class: :form__text, id:"post_concept" %>
+    <%= f.label :text, "Text" %><br />
+    <%= f.text_area :text, class: :form__text, id:"post_text" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "記事画像" %><br />
+    <%= f.label :image, "Image" %><br />
     <%= f.file_field :image, id:"post_image" %>
   </div>
 
   <div class="actions">
-    <%= f.submit "保存する", class: :form__btn  %>
+    <%= f.submit "Post", class: :form__btn  %>
   </div>
 <% end %>
