@@ -26,7 +26,7 @@
       </div>
 
       <div class="detail__message">
-        <%= @post.text %>
+        <%= simple_format(@post.text) %>
       </div>
       
       <% if user_signed_in? %>
