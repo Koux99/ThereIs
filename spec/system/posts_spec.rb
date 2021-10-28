@@ -28,7 +28,7 @@ RSpec.describe '新規記事投稿', type: :system do
       image_path = Rails.root.join('public/images/test_image.png')
       # 画像選択フォームに画像を添付する
       attach_file('post[image]', image_path)
-      # 送信するとTweetモデルのカウントが1上がることを確認する
+      # 送信するとPostモデルのカウントが1上がることを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Post.count }.by(1)
@@ -187,5 +187,42 @@ RSpec.describe '投稿削除', type: :system do
       # 詳細ページに「削除」へのリンクがないことを確認する
       expect(page).to have_no_link 'Delete', href: post_path(@post)
     end
+  end
+end
+
+RSpec.describe '記事詳細', type: :system do
+  before do
+    @user   = FactoryBot.build(:user)
+    @user.admin = 0
+    @user.save
+    @post   = FactoryBot.create(:post)
+  end
+  it 'ログインしたユーザーは記事詳細ページに遷移してコメント投稿欄が表示される' do
+    # ログインする
+    visit new_user_session_path
+    fill_in 'Email', with: @user.email
+    fill_in 'Password', with: @user.password
+    find('input[name="commit"]').click
+    expect(current_path).to eq(root_path)
+    # 記事の詳細ページに遷移する
+    visit post_path(@post)
+    # 詳細ページに記事の内容が含まれている (タイトル・画像・テキスト)
+    expect(page).to have_selector('img')
+    expect(page).to have_content(@post.title)
+    expect(page).to have_content(@post.text)
+    # コメントフォームが存在することを確認する
+    expect(page).to have_selector 'form'
+  end
+  it 'ログインしていない状態で記事詳細ページに遷移できるもののコメント投稿欄が表示されない' do
+    # トップページに移動する
+    visit root_path
+    # 記事の詳細ページに遷移する
+    visit post_path(@post)
+    # 詳細ページに記事の内容が含まれている (タイトル・画像・テキスト)
+    expect(page).to have_selector('img')
+    expect(page).to have_content(@post.title)
+    expect(page).to have_content(@post.text)
+    # コメントフォームが存在しないことを確認する
+    expect(page).to have_no_selector 'form'
   end
 end
