@@ -53,7 +53,7 @@ There is (ゼアイズ)
 
 # DEMO
 ## ①トップページ
-[![Image from Gyazo](https://i.gyazo.com/45eca7b97bd1e849788e14cdf30f398b.gif)](https://gyazo.com/45eca7b97bd1e849788e14cdf30f398b)
+[![Image from Gyazo](https://i.gyazo.com/a52ae376820f99bee992b58873547658.gif)](https://gyazo.com/a52ae376820f99bee992b58873547658)
 
 - 全てのユーザーは、投稿された記事の一覧が確認できる
 - 「いいね」はログインユーザーのみ確認できる
